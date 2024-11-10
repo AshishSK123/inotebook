@@ -1,0 +1,21 @@
+h1 {
+  text-align: center;
+}
+
+i {
+  cursor: pointer;
+}
+
+
+#inner {
+  
+  width: 400px;
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid blanchedalmond ;
+  border-radius: 10px;
+}
+
+
+
+
