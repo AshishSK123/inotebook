@@ -48,15 +48,14 @@ export default function Signup() {
 
         // localStorage.setItem('token', data.authtoken)
       } else {
-        value.showAlert(data.error,"danger")
+        value.showAlert(data.error, "danger")
       }
-    } else
-    {
-      value.showAlert("Password does not math","danger")
+    } else {
+      value.showAlert("Password does not math", "danger")
     }
   }
   return (
-    <div id='loginForm' className='d-flex justify-content-center'>
+    <div id='loginForm' className='d-flex justify-content-center' style={value.mode === 'light' ? { color: 'black' } : { color: 'white' }}>
       <div id='inner'>
         <h3>Sign-Up</h3>
         <br />
@@ -68,16 +67,16 @@ export default function Signup() {
           </div>
           <div className="mb-3">
             <label htmlFor="email" className="form-label" ><h5>Email address</h5></label>
-            <input type="email" onChange={handleChange} value={credentials.email} name="email" className="form-control" id="email" aria-describedby="emailHelp" required/>
+            <input type="email" onChange={handleChange} value={credentials.email} name="email" className="form-control" id="email" aria-describedby="emailHelp" required />
             <div id="email" className="form-text">We'll never share your email with anyone else.</div>
           </div>
           <div className="mb-3">
             <label htmlFor="Password" className="form-label" ><h5>Password</h5></label>
-            <input type="password" onChange={handleChange} value={credentials.password} name="password" className="form-control" id="Password" minLength={5} required/>
+            <input type="password" placeholder='At least 6 Characters' onChange={handleChange} value={credentials.password} name="password" className="form-control" id="Password" minLength={5} required />
           </div>
           <div className="mb-3">
-            <label htmlFor="confirmPassword" className="form-label" ><h5>Confirm Password</h5></label>
-            <input type="password" onChange={handleChange} value={credentials.confirmPassword} name="confirmPassword" className="form-control" id="confirmPassword" required/>
+            <label htmlFor="confirmPassword" className="form-label" ><h5>Re-enter password</h5></label>
+            <input type="password" onChange={handleChange} value={credentials.confirmPassword} name="confirmPassword" className="form-control" id="confirmPassword" required />
           </div>
           <button type="submit" className="btn btn-primary">Submit</button>
         </form>

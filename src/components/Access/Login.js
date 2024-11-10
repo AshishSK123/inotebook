@@ -54,7 +54,7 @@ function Login() {
 
 
     return (
-        <div id='loginForm' className='d-flex justify-content-center'>
+        <div id='loginForm' className='d-flex justify-content-center' style={value.mode === 'light' ? { color: 'black' } : { color: 'white' }}>
             <div id='inner'>
                 <h3>Login</h3>
                 <br />

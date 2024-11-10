@@ -1,3 +1,10 @@
+/* Reset body margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 h1 {
   text-align: center;
 }
@@ -6,16 +13,121 @@ i {
   cursor: pointer;
 }
 
-
+/* Login form inner content */
 #inner {
-  
   width: 400px;
   margin-top: 2rem;
   padding: 1rem;
-  border: 1px solid blanchedalmond ;
+  border: 1px solid blanchedalmond;
   border-radius: 10px;
+  animation: fadeInUp 1.5s ease-out;
 }
 
+/* Center the login form container  */
+/* #loginForm {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: slideIn 1s ease-out;
+} */
 
+/* Animation for sliding in the form */
+/* @keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+} */
 
+/* Fade in animation for form content */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+/* Style for form labels */
+/* .form-label {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #f4f4f4;
+  text-align: left;
+  margin-bottom: 8px;
+} */
+
+/* Style for form inputs */
+input.form-control {
+  font-size: 1em;
+  padding: 10px;
+  border-radius: 8px;
+  border: 0.5px solid #02111d88;
+  transition: all 0.3s ease;
+}
+
+/* animation after input selection */
+input.form-control:focus {
+  outline: none;
+  border: 1px solid #3498db;
+}
+
+/* Text under email input */
+.form-text {
+  font-size: 0.8em;
+  color: #a1a9af;
+  margin-top: 5px;
+}
+
+/* Style for Submit button */
+button.btn {
+  /* font-size: 1.1em; */
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #000000c0;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button.btn:hover {
+  background-color: #2980b9;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+button.btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design  */
+@media (max-width: 768px) {
+  #loginForm {
+    padding: 20px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-label h5 {
+    font-size: 1em;
+  }
+
+  .form-control {
+    padding: 10px;
+  }
+
+  button.btn {
+    font-size: 1em;
+  }
+}
