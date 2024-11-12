@@ -6,6 +6,7 @@ import NoteContext from '../../context/notes/NoteContext';
 export default function Signup() {
 
   let value = useContext(NoteContext);
+  const host = "https://notebook-backend-8kl9.onrender.com"
 
   // navigator hook for redirection
   const navigate = useNavigate()
@@ -27,7 +28,7 @@ export default function Signup() {
     if (credentials.password === credentials.confirmPassword) {
       // console.log("hi")
 
-      const response = await fetch('http://localhost:5000/api/login/user', {
+      const response = await fetch(`${host}/api/login/user`, {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",

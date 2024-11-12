@@ -6,6 +6,8 @@ function Login() {
 
     let value = useContext(NoteContext);
 
+    const host = "https://notebook-backend-8kl9.onrender.com"
+
     // navigator hook for redirection
     const navigate = useNavigate()
 
@@ -24,7 +26,7 @@ function Login() {
 
 
         // API call
-        const response = await fetch('http://localhost:5000/api/login/signin', {
+        const response = await fetch(`${host}/api/login/signin`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
