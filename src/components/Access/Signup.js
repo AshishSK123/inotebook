@@ -6,7 +6,7 @@ import NoteContext from '../../context/notes/NoteContext';
 export default function Signup() {
 
   let value = useContext(NoteContext);
-  const host = "https://notebook-backend-8kl9.onrender.com"
+  const host = process.env.REACT_APP_BACKEND_HOST_URL
 
   // navigator hook for redirection
   const navigate = useNavigate()
@@ -25,8 +25,8 @@ export default function Signup() {
 
     e.preventDefault()
 
+    //  to check password value matches
     if (credentials.password === credentials.confirmPassword) {
-      // console.log("hi")
 
       const response = await fetch(`${host}/api/login/user`, {
         method: 'POST',
@@ -35,7 +35,7 @@ export default function Signup() {
         },
         body: JSON.stringify({
           name: credentials.name,
-          email: credentials.email,
+          email: value.Small_letter(credentials.email),
           password: credentials.password
         })
       })
@@ -58,7 +58,7 @@ export default function Signup() {
   return (
     <div id='loginForm' className='d-flex justify-content-center' style={value.mode === 'light' ? { color: 'black' } : { color: 'white' }}>
       <div id='inner'>
-        <h3>Sign-Up</h3>
+        <h3 className='text-center'>Sign-Up</h3>
         <br />
         <form className='my-4' onSubmit={login}>
           <div className="mb-3">

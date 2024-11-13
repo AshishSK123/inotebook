@@ -5,7 +5,7 @@ import { useState } from "react";
 // function to create state variables and pass using createContext variable
 const NoteState = (props) => {
 
-  const host = "https://notebook-backend-8kl9.onrender.com"
+  const host = process.env.REACT_APP_BACKEND_HOST_URL
 
   // function to log message
   const [alert, setMsg] = useState({ msg: null, type: null });
@@ -17,6 +17,11 @@ const NoteState = (props) => {
     }, 1500)
   }
 
+
+  //function to convert email field into small case
+  function Small_letter(value) {
+    return value.toLowerCase()
+  }
 
   // initializing mode value  using useState Hook  and updating it later using set method
   const [mode, setMode] = useState('light');
@@ -135,7 +140,7 @@ const NoteState = (props) => {
     //NoteContext : creatContext variable // .Provider : method // value :  to pass values/object/function
     // NoteContext.Provider : provide the context value to components
     // SomeContext.Consumer is an alternative and rarely used way to read the context value.
-    <NoteContext.Provider value={{ mode, toggleMode, notes, setNote, alert, showAlert, addNote, deleteNote, editNote, getNote }}>
+    <NoteContext.Provider value={{ mode, toggleMode, notes, setNote, alert, showAlert, addNote, deleteNote, editNote, getNote, Small_letter }}>
       {/* props.children used to represent the child elements nested inside a component  */}
       {props.children}
 

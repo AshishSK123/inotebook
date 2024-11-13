@@ -53,7 +53,7 @@ export default function Navbar() {
               {/* to check user has logged in or not */}
               {!localStorage.getItem('token') ? <div>
                 <Link className="btn btn-primary mx-3" to="/login" role="button">Login</Link>
-                <Link className="btn btn-primary " to="/signup" role="button">Sign-Up</Link>
+                <Link className="btn btn-primary " to="/" role="button">Sign-Up</Link>
               </div> : <button className="btn btn-primary mx-3" onClick={logout}>Log out</button>}
             </div>
           </div>
