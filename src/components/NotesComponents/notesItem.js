@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import NoteContext from '../context/notes/NoteContext'
+import NoteContext from '../../context/notes/NoteContext'
 import Editnote from './Editnote'
 
 export default function NotesItem(props) {

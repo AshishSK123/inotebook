@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import NoteContext from '../context/notes/NoteContext';
+import NoteContext from '../../context/notes/NoteContext';
 
 
 
@@ -55,7 +55,7 @@ export default function Addnote() {
                 <textarea placeholder={"Description"} rows="4" cols="50" className="form-control" id="description" name='description' value={description} onChange={onChange} required minLength={3} />
             </div>
 
-            <button type="submit" className="btn btn-primary" >Add Note</button>
+            <button type="submit" className="logoutbtn" >Add Note</button>
         </form>
     )
 }

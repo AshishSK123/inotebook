@@ -15,11 +15,11 @@ i {
 
 /* Login form inner content */
 #inner {
-  width: 400px;
+  width: 450px;
   margin-top: 2rem;
   padding: 1rem;
   border: 1px solid blanchedalmond;
-  border-radius: 10px;
+  border-radius: 5px;
   animation: fadeInUp 1.5s ease-out;
 }
 
@@ -33,6 +33,32 @@ i {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   animation: slideIn 1s ease-out;
 } */
+
+.outer {
+  height: 700px;
+  width: 100%;
+  background-image: url("./undraw_online_discussion_5wgl.svg");
+  background-size: 100% 100%;
+  background-position: 50vh;
+}
+
+.signup-outer {
+  height: 650px;
+  width: 100%;
+  background-image: url("./customer_service_knowledge_base-Document360-1200x600.jpg");
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  background-position: 0vh;
+}
+
+.signin-inner {
+  margin-right: 15%;
+}
+
+.parentdiv {
+  width: 100%;
+  height: 800px;
+}
 
 /* Animation for sliding in the form */
 /* @keyframes slideIn {
@@ -69,7 +95,7 @@ i {
 input.form-control {
   font-size: 1em;
   padding: 10px;
-  border-radius: 8px;
+  border-radius: 3px;
   border: 0.5px solid #02111d88;
   transition: all 0.3s ease;
 }
@@ -115,11 +141,25 @@ button.btn:active {
     padding: 20px;
     max-width: 100%;
   }
+  #login {
+    font-size: x-small;
+  }
+
+  .signup-outer {
+    background-image: none;
+  }
+
+  .signin-inner {
+    margin: 0%;
+  }
 }
 
 @media (max-width: 480px) {
   .form-label h5 {
     font-size: 1em;
+  }
+  .outer {
+    background-size: auto;
   }
 
   .form-control {
@@ -129,4 +169,97 @@ button.btn:active {
   button.btn {
     font-size: 1em;
   }
+}
+
+.loginbtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: purple;
+}
+
+#login {
+  border: 1px solid black;
+  text-align: center;
+  border-radius: 3px;
+}
+
+#login:first-child {
+  background-color: blue;
+  color: #fff;
+}
+
+#login:last-child {
+  background-color: red;
+  color: #fff;
+}
+
+/* Styling the container */
+.input-container {
+  position: relative;
+  margin: 20px 0;
+}
+
+/* Styling the label as a placeholder */
+.input-container label {
+  position: absolute;
+  top: 0;
+  left: 12px;
+  color: black;
+  font-size: 16px;
+  pointer-events: none;
+  background-color: white;
+  padding: 0 4px;
+  transform: translateY(50%); /* Start label within input field */
+  transition: 0.3s ease all; /* Animation on focus */
+}
+
+/* Animation when the input field is focused */
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label {
+  top: -1px; /* Align with top border */
+  font-size: 12px;
+  color: purple;
+  transform: translateY(-50%); /* Move label onto border */
+}
+
+.button {
+  width: 100%;
+  /* background-color: purple; */
+  background-color: rgb(202, 24, 202);
+  color: white;
+  border-radius: 3px;
+  height: max-content;
+  font-family: emoji;
+  font-size: larger;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.logoutbtn {
+  background-color: white;
+  color: purple;
+  border: 2px solid purple;
+  border-radius: 3px;
+  width: 90px;
+  padding: 2px;
+  font-family: auto;
+  font-size: large;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logoutbtn:hover {
+  background-color: rgb(202, 24, 202);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.logoutbtn:active {
+  transform: translateY(0);
 }

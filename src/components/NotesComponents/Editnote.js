@@ -1,5 +1,5 @@
 import React, { useState, useContext, useRef } from 'react'
-import NoteContext from '../context/notes/NoteContext';
+import NoteContext from '../../context/notes/NoteContext'
 
 export default function Editnote() {
 

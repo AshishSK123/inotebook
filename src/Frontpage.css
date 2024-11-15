@@ -1,0 +1,62 @@
+.page {
+  /* background-image: url("./undraw_online_discussion_5wgl.svg"); */
+  display: inline-block;
+  height: 625px;
+  width: 100%;
+  background-image: url("./undraw_team_up_re_84ok.svg");
+  background-size: 100% 100%;
+  background-position: 50vh;
+}
+
+.page p {
+  font-family: "Arial Narrow Bold", sans-serif;
+  font-size: 2rem;
+  margin-left: 5%;
+  margin-bottom: -1rem;
+}
+
+.paratext {
+  margin-left: 5%;
+  margin-top: 3%;
+  font-size: 1.2rem;
+  width: 550px;
+  height: 100px;
+}
+
+.pagebtn {
+  margin-top: 6%;
+  margin-left: 25%;
+  width: 200px;
+  padding: 1%;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: whitesmoke;
+  background-color: rgb(202, 24, 202);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.pagebtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.pagebtn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 20px;
+    max-width: 100%;
+    background-image: none;
+  }
+  .paratext {
+    padding: 1px;
+    max-width: 100%;
+  }
+  .pagebtn {
+    margin-left: 0%;
+    margin-block: inherit;
+    max-width: 100%;
+  }
+}

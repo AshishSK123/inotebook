@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Floating Placeholder on Border Animation</title>
+<style>
+  /* Styling the container */
+  .input-container {
+    position: relative;
+    width: 300px;
+    margin: 20px 0;
+  }
+
+  /* Styling the input field */
+  .input-container input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  /* Styling the label as a placeholder */
+  .input-container label {
+    position: absolute;
+    top: 0;
+    left: 12px;
+    color: #999;
+    font-size: 16px;
+    pointer-events: none;
+    background-color: white;
+    padding: 0 4px;
+    transform: translateY(50%); /* Start label within input field */
+    transition: 0.3s ease all; /* Animation on focus */
+  }
+
+  /* Animation when the input field is focused */
+  .input-container input:focus + label,
+  .input-container input:not(:placeholder-shown) + label {
+    top: -1px; /* Align with top border */
+    font-size: 12px;
+    color: #007bff;
+    transform: translateY(-50%); /* Move label onto border */
+  }
+</style>
+</head>
+<body>
+
+<div class="input-container">
+  <input type="text" id="name" required placeholder=" " />
+  <label for="name">Your Name</label>
+</div>
+
+</body>
+</html>

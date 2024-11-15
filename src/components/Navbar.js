@@ -32,17 +32,20 @@ export default function Navbar() {
     <>
       <nav style={{ border: '1px solid black' }} className="navbar navbar-expand-lg" data-bs-theme={value.mode}>
         <div className="container-fluid">
-          <b className="navbar-brand"><i class="fa-brands fa-evernote fa-2xl" /> iNoteBook</b>
+          <b className="navbar-brand"><i className="fa-brands fa-evernote fa-2xl" /> iNoteBook</b>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className={`nav-link ${location.pathname === '/home' ? "active" : ""}`} to="/home">Notes</Link>
+                <Link className={`nav-link ${location.pathname === '/home' ? "active" : ""}`} to="/home">Home</Link>
               </li>
               <li className="nav-item">
                 <Link className={`nav-link ${location.pathname === "/About" ? "active" : ""}`} to="/About">About</Link>
+              </li>
+              <li className="nav-item">
+                <Link className={`nav-link ${location.pathname === "/About" ? "active" : ""}`} to="/notes">Notes</Link>
               </li>
             </ul>
             <div className="d-flex" >
@@ -52,9 +55,9 @@ export default function Navbar() {
               </div>
               {/* to check user has logged in or not */}
               {!localStorage.getItem('token') ? <div>
-                <Link className="btn btn-primary mx-3" to="/login" role="button">Login</Link>
-                <Link className="btn btn-primary " to="/" role="button">Sign-Up</Link>
-              </div> : <button className="btn btn-primary mx-3" onClick={logout}>Log out</button>}
+                {/* <Link className="btn btn-primary mx-3" to="/login" role="button">Login</Link> */}
+                {/* <Link className="btn btn-primary " to="/signup" role="button">Sign-Up</Link> */}
+              </div> : <button className="logoutbtn mx-3" onClick={logout}>Logout</button>}
             </div>
           </div>
         </div>

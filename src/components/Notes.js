@@ -1,7 +1,8 @@
 import React, { useContext, useEffect } from 'react';
-import NotesItem from './notesItem';
+import NotesItem from './NotesComponents/notesItem';
 import NoteContext from '../context/notes/NoteContext';
 import { useNavigate } from 'react-router-dom';
+import Editnote from './NotesComponents/Editnote';
 
 
 export default function Notes() {
@@ -29,7 +30,7 @@ export default function Notes() {
 
 
     return (<>
-
+    <Editnote />
         <div className='container' style={style}>
             <h2 className='my-3'>Notes</h2>
             {notes.length === 0 && 'Add Note to display'}

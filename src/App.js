@@ -8,6 +8,8 @@ import NoteState from './context/notes/NoteState';
 import Alert from './components/Alert';
 import Login from './components/Access/Login';
 import Signup from './components/Access/Signup';
+import Frontpage from './components/Frontpage';
+import Notes from './components/Notes';
 
 function App() {
 
@@ -18,10 +20,12 @@ function App() {
         <Navbar />
         <Alert />
         <Routes>
+          <Route path='/' element={<Frontpage />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Signup />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path='/notes' element ={<Notes/>}/>
         </Routes>
 
       </Router >
