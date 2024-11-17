@@ -84,11 +84,12 @@ const NoteState = (props) => {
     // setNote(notes.push(newNote))
     //.concat  returns a new array
     setNote(notes.concat(note))
+    showAlert(`New Note: Added`, "success")
   }
 
   //Delete note
   async function deleteNote(id, tag) {
-    showAlert(`Note:${tag} Deleted`, "success")
+    showAlert(`Note: ${tag} Deleted`, "success")
     //API Call
     await fetch(`${host}/api/Notes/deletenote/${id}`, {
       method: 'DELETE',
@@ -132,7 +133,7 @@ const NoteState = (props) => {
       }
     }
     setNote(newNote)
-    showAlert(`Note:${tag} Edited`, "success")
+    showAlert(`Note:Edited`, "success")
   }
 
 

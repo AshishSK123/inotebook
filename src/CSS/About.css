@@ -1,0 +1,240 @@
+/* General Styles */
+/* body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+} */
+
+/* About Image Section */
+.aboutimg {
+  width: 100%;
+  height: 500px;
+  background-image: url("../images/About.png"); /* Ensure the correct path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Middle Content Section */
+.middlecontent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.leftside {
+  flex: 1;
+  min-width: 300px;
+  margin-right: 20px;
+  background-color: bisque;
+  padding: 20px;
+  color: #000;
+}
+
+.rightside {
+  flex: 1;
+  background-image: url("../images/website-example-justinmind-1024x655.png.webp"); /* Ensure the correct path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 6px;
+  height: 500px;
+}
+
+/* Last Content Section */
+.lastcontent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2%;
+  background-color: rgb(231, 222, 222);
+  flex-wrap: wrap;
+}
+
+.lastleftside {
+  flex: 1;
+  min-width: 300px;
+  background-image: url("../images/service-desk-guide.png"); /* Ensure the correct path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  height: 300px;
+}
+
+.lastrightside {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  color: #000;
+}
+
+/* Footer */
+.top-bar {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.top-icons a {
+  margin: 0 10px;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.top-icons a:hover {
+  color: #fff;
+}
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 150px;
+  max-width: 300px;
+  margin: 0 10px;
+}
+
+.footer-section h4 {
+  position: relative;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  color: #fff;
+}
+
+.footer-social {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-social a {
+  margin: 0 10px;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  color: #fff;
+}
+
+/* Underline for h4 */
+.footer-section h4::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0%;
+  width: 40px;
+  height: 2px;
+  background-color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .aboutimg {
+    height: 250px; /* Adjust image height */
+    background-size: contain;
+  }
+  
+  .middlecontent {
+    flex-direction: column; /* Stack content vertically on small screens */
+    padding: 10px;
+  }
+  
+  .leftside,
+  .lastleftside,
+  .lastrightside {
+    flex: 1;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* .rightside {
+    background-image: url('');
+    background-image: url("./website-example-justinmind-1024x655.png.webp"); 
+    background-size: cover;
+    width: 100%;
+    height: 100px;
+  } */
+  .footer-container {
+    flex-direction: column; /* Stack footer sections */
+    align-items: center;
+  }
+
+  .footer-section {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .top-bar {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+  }
+
+  .top-icons a {
+    font-size: 16px;
+    margin: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutimg {
+    height: 150px; /* Further reduce image height */
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .footer-section h4::after {
+    width: 30px; /* Reduce underline width */
+  }
+
+  .top-icons a {
+    font-size: 14px; /* Smaller icon size */
+  }
+}

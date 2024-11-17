@@ -23,21 +23,11 @@ i {
   animation: fadeInUp 1.5s ease-out;
 }
 
-/* Center the login form container  */
-/* #loginForm {
-  width: 100%;
-  max-width: 400px;
-  padding: 30px;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  animation: slideIn 1s ease-out;
-} */
 
 .outer {
   height: 700px;
   width: 100%;
-  background-image: url("./undraw_online_discussion_5wgl.svg");
+  background-image: url("../images/undraw_online_discussion_5wgl.svg");
   background-size: 100% 100%;
   background-position: 50vh;
 }
@@ -45,7 +35,7 @@ i {
 .signup-outer {
   height: 650px;
   width: 100%;
-  background-image: url("./customer_service_knowledge_base-Document360-1200x600.jpg");
+  background-image: url("../images/customer_service_knowledge_base-Document360-1200x600.jpg");
   background-size: 50% 100%;
   background-repeat: no-repeat;
   background-position: 0vh;
@@ -60,16 +50,6 @@ i {
   height: 800px;
 }
 
-/* Animation for sliding in the form */
-/* @keyframes slideIn {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0);
-  }
-} */
-
 /* Fade in animation for form content */
 @keyframes fadeInUp {
   from {
@@ -82,14 +62,6 @@ i {
   }
 }
 
-/* Style for form labels */
-/* .form-label {
-  font-size: 1.1em;
-  font-weight: 600;
-  color: #f4f4f4;
-  text-align: left;
-  margin-bottom: 8px;
-} */
 
 /* Style for form inputs */
 input.form-control {
@@ -144,7 +116,7 @@ button.btn:active {
   #login {
     font-size: x-small;
   }
-
+  
   .signup-outer {
     background-image: none;
   }
@@ -161,11 +133,11 @@ button.btn:active {
   .outer {
     background-size: auto;
   }
-
+  
   .form-control {
     padding: 10px;
   }
-
+  
   button.btn {
     font-size: 1em;
   }
@@ -214,9 +186,11 @@ button.btn:active {
   transition: 0.3s ease all; /* Animation on focus */
 }
 
-/* Animation when the input field is focused */
+/* Animation when the input field & textarea field is focused or not empty */
 .input-container input:focus + label,
-.input-container input:not(:placeholder-shown) + label {
+.input-container input:not(:placeholder-shown) + label,
+.input-container textarea:focus ~ label,
+.input-container textarea:not(:placeholder-shown) ~ label{
   top: -1px; /* Align with top border */
   font-size: 12px;
   color: purple;
@@ -262,4 +236,20 @@ button.btn:active {
 
 .logoutbtn:active {
   transform: translateY(0);
+}
+
+
+/* Add Note CSS */
+.addnotecontainer {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Optional styling for focused textarea */
+.input-container textarea:focus {
+  border-color: purple;
 }

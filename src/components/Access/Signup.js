@@ -100,7 +100,7 @@ export default function Signup() {
               <input type="password" placeholder='' onChange={handleChange} value={credentials.confirmPassword} name="confirmPassword" className="form-control" id="confirmPassword" required />
               <label htmlFor="confirmPassword" className="form-label" >Re-enter password</label>
             </div>
-            <button type="submit" className="button">Submit</button>
+            <button type="submit" className="button">Register</button>
           </form>
         </div>
       </div>

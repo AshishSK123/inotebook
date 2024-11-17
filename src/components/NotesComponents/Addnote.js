@@ -40,21 +40,21 @@ export default function Addnote() {
     const style = (mode === 'light') ? { color: 'black' } : { color: 'white' }
 
     return (
-        <form className='container' style={style} onSubmit={handleClick}>
-            <h3 className='my-2' >New Note</h3>
-            <div className="mb-3">
+        <form className='addnotecontainer' style={style} onSubmit={handleClick}>
+            <h3 className='my-2' >Create new Note</h3>
+            <p>Add a new note with your info/notes</p>
+            <div className="input-container mb-3">
+                <input type="text" placeholder=""className="form-control" id="tag" name='tag' value={tag} onChange={onChange} required minLength={3} />
                 <label htmlFor="tag" className="form-label">Tag</label>
-                <input type="text" placeholder={"Tag"}className="form-control" id="tag" name='tag' value={tag} onChange={onChange} required minLength={3} />
             </div>
-            <div className="mb-3 my-3">
+            <div className="input-container mb-3 my-3">
+                <input type="text" placeholder="" className="form-control" id="title" name='title' aria-describedby="emailHelp" value={title} onChange={onChange} required minLength={3} />
                 <label htmlFor="title" className="form-label">Title</label>
-                <input type="text" placeholder={"Title"} className="form-control" id="title" name='title' aria-describedby="emailHelp" value={title} onChange={onChange} required minLength={3} />
             </div>
-            <div className="mb-3">
+            <div className="input-container mb-3">
+                <textarea placeholder="" rows="4" cols="50" className="form-control" id="description" name='description' value={description} onChange={onChange} required minLength={3} />
                 <label htmlFor="description" className="form-label">Description</label>
-                <textarea placeholder={"Description"} rows="4" cols="50" className="form-control" id="description" name='description' value={description} onChange={onChange} required minLength={3} />
             </div>
-
             <button type="submit" className="logoutbtn" >Add Note</button>
         </form>
     )

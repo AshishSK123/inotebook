@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import Logo from "./Logo";
-import "../Frontpage.css";
+import "../CSS/Frontpage.css";
 import { Link } from "react-router-dom";
 import NoteContext from '../context/notes/NoteContext'
 
