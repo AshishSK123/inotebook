@@ -37,10 +37,10 @@ export default function Addnote() {
     }
 
     // To change test color
-    const style = (mode === 'light') ? { color: 'black' } : { color: 'white' }
+    // const style = (mode === 'light') ? { color: 'black' } : { color: 'white' }
 
     return (
-        <form className='addnotecontainer' style={style} onSubmit={handleClick}>
+        <form className='addnotecontainer' onSubmit={handleClick}>
             <h3 className='my-2' >Create new Note</h3>
             <p>Add a new note with your info/notes</p>
             <div className="input-container mb-3">

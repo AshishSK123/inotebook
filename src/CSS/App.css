@@ -107,41 +107,6 @@ button.btn:active {
   transform: translateY(0);
 }
 
-/* Responsive Design  */
-@media (max-width: 768px) {
-  #loginForm {
-    padding: 20px;
-    max-width: 100%;
-  }
-  #login {
-    font-size: x-small;
-  }
-  
-  .signup-outer {
-    background-image: none;
-  }
-
-  .signin-inner {
-    margin: 0%;
-  }
-}
-
-@media (max-width: 480px) {
-  .form-label h5 {
-    font-size: 1em;
-  }
-  .outer {
-    background-size: auto;
-  }
-  
-  .form-control {
-    padding: 10px;
-  }
-  
-  button.btn {
-    font-size: 1em;
-  }
-}
 
 .loginbtn {
   display: flex;
@@ -252,4 +217,106 @@ button.btn:active {
 /* Optional styling for focused textarea */
 .input-container textarea:focus {
   border-color: purple;
+}
+
+
+
+
+/* Responsive Design  */
+/* @media (max-width: 768px) {
+  #loginForm {
+    padding: 20px;
+    max-width: 100%;
+  }
+  #login {
+    font-size: x-small;
+  }
+  
+  .signup-outer {
+    background-image: none;
+  }
+
+  .signin-inner {
+    margin: 0%;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-label h5 {
+    font-size: 1em;
+  }
+  .outer {
+    background-size: auto;
+  }
+  
+  .form-control {
+    padding: 10px;
+  }
+  
+  button.btn {
+    font-size: 1em;
+  }
+} */
+
+
+
+
+
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .signup-outer {
+    background-size: auto;
+    background-position: top left;
+  }
+  
+  .signin-inner {
+    margin-right: 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  #inner {
+    width: 100%; /* Full width */
+  }
+
+  .outer {
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: 390px -39px;
+  }
+
+  .signup-outer {
+    background-image: none; /* Hide on smaller screens */
+  }
+
+  .signin-inner {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  #inner {
+    padding: 1rem;
+  }
+
+  #login {
+    font-size: 11px;
+  }
+
+  .form-label h5 {
+    font-size: 1em;
+  }
+
+  .form-control {
+    padding: 8px;
+  }
+
+  button.btn {
+    font-size: 0.9em;
+  }
 }

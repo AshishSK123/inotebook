@@ -48,8 +48,11 @@
   .page {
     padding: 20px;
     max-width: 100%;
-    background-image: none;
+    background-repeat: no-repeat;
+    background-size: 227px;
+    background-position: 444px 1px;
   }
+
   .paratext {
     padding: 1px;
     max-width: 100%;
@@ -58,5 +61,12 @@
     margin-left: 0%;
     margin-block: inherit;
     max-width: 100%;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagebtn {
+    width: -webkit-fill-available;
   }
 }

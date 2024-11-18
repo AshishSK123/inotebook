@@ -26,7 +26,7 @@ export default function NotesItem(props) {
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{description} </p>
             <p className="card-text">{date} </p>
-            {/* <i class="fa-regular fa-trash-can"></i> */}
+            {/* <i className="fa-regular fa-trash-can"></i> */}
             <i onClick={() => { deleteNote(_id, tag) }} className="fa-solid fa-trash-can"></i>
             <i onClick={() => { editNote(notes) }} className="fa-regular fa-pen-to-square mx-3"></i>
           </div>
