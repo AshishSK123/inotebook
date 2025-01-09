@@ -34,10 +34,10 @@ function About() {
             <br />
             <span style={{ fontSize: '35px', fontFamily: 'Montserrat', marginLeft: '5%' }}>Powering the <span style={{ color: 'purple' }}>internet's visuals</span></span>
             <br />
-            <p style={{ marginLeft: '5%', marginRight: '100px' }}>How we started? The concept was simple. iNotebook was born from the pain of writing all the things in notebook which is very hectic <i className="fa-solid fa-face-tired fa-bounce" style={{ color: "red" }} />. An online web platform where you can create, edit, upload, delete your notes/information privately and securely without any disturbancee</p>
+            <p >How we started? The concept was simple. iNotebook was born from the pain of writing all the things in notebook which is very hectic <i className="fa-solid fa-face-tired fa-bounce" style={{ color: "red" }} />. An online web platform where you can create, edit, upload, delete your notes/information privately and securely without any disturbancee</p>
             {/* To check user logged if not display button  */}
-            {!localStorage.getItem('token')&&
-            <Link to={'/Signup'}><button style={{ marginTop: '0%' }} className="pagebtn"> Sign Up Now</button></Link>
+            {!localStorage.getItem('token') &&
+              <Link to={'/Signup'}><button style={{ marginTop: '0%' }} className="pagebtn"> Sign Up Now</button></Link>
             }
           </div>
         </div>

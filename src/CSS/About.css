@@ -8,7 +8,7 @@
 
 /* About Image Section */
 .aboutimg {
-  width: 100%;
+  width: 100vw;
   height: 500px;
   background-image: url("../images/About.png"); /* Ensure the correct path */
   background-size: cover;
@@ -179,17 +179,18 @@
     height: 250px; /* Adjust image height */
     background-size: contain;
   }
-  
+
   .middlecontent {
     flex-direction: column; /* Stack content vertically on small screens */
     padding: 10px;
   }
-  
+
   .leftside,
   .lastleftside,
   .lastrightside {
     flex: 1;
     max-width: 100%;
+    margin-right: 0px;
     margin-bottom: 20px;
   }
 
@@ -236,5 +237,22 @@
 
   .top-icons a {
     font-size: 14px; /* Smaller icon size */
+  }
+
+  .lastrightside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .lastrightside > p {
+    margin-bottom: 10%;
+  }
+
+  .lastrightside button{
+    width: 150px;
+    height: 40px;
+    padding: auto;
   }
 }
