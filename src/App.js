@@ -10,7 +10,6 @@ import Login from './components/Access/Login';
 import Signup from './components/Access/Signup';
 import Frontpage from './components/Frontpage';
 import Notes from './components/Notes';
-import SearchNote from './components/SearchNote.js';
 
 
 function App() {
