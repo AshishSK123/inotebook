@@ -17,6 +17,7 @@ export default function NotesItem(props) {
   // To access the values from useContext()
   const { deleteNote } = useContext(NoteContext)
 
+
   return (
     <>
       <div className='col-md-3'>
@@ -28,6 +29,7 @@ export default function NotesItem(props) {
             <p className="card-text">{date} </p>
             {/* <i className="fa-regular fa-trash-can"></i> */}
             <i onClick={() => { deleteNote(_id, tag) }} className="fa-solid fa-trash-can"></i>
+            {/* <i onClick={() => { test(_id , tag) }} className="fa-solid fa-trash-can"></i> */}
             <i onClick={() => { editNote(notes) }} className="fa-regular fa-pen-to-square mx-3"></i>
           </div>
         </div>

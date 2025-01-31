@@ -42,10 +42,10 @@ export default function Navbar() {
                 <Link className={`nav-link ${location.pathname === '/home' ? "active" : ""}`} to="/home">Home</Link>
               </li>
               <li className="nav-item">
-                <Link className={`nav-link ${location.pathname === "/About" ? "active" : ""}`} to="/About">About</Link>
+                <Link className={`nav-link ${location.pathname === "/about" ? "active" : ""}`} to="/about">About</Link>
               </li>
               <li className="nav-item">
-                <Link className={`nav-link ${location.pathname === "/About" ? "active" : ""}`} to="/notes">Notes</Link>
+                <Link className={`nav-link ${location.pathname === "/notes" ? "active" : ""}`} to="/notes">Notes</Link>
               </li>
             </ul>
             <div className="d-flex" >

@@ -10,6 +10,8 @@ import Login from './components/Access/Login';
 import Signup from './components/Access/Signup';
 import Frontpage from './components/Frontpage';
 import Notes from './components/Notes';
+import SearchNote from './components/SearchNote.js';
+
 
 function App() {
 
@@ -26,6 +28,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path='/notes' element ={<Notes/>}/>
+          <Route path='/search' element ={<SearchNote/>}/>
         </Routes>
 
       </Router >

@@ -23,7 +23,6 @@ i {
   animation: fadeInUp 1.5s ease-out;
 }
 
-
 .outer {
   height: 700px;
   width: 100%;
@@ -61,7 +60,6 @@ i {
     transform: translateY(0);
   }
 }
-
 
 /* Style for form inputs */
 input.form-control {
@@ -106,7 +104,6 @@ button.btn:hover {
 button.btn:active {
   transform: translateY(0);
 }
-
 
 .loginbtn {
   display: flex;
@@ -155,7 +152,7 @@ button.btn:active {
 .input-container input:focus + label,
 .input-container input:not(:placeholder-shown) + label,
 .input-container textarea:focus ~ label,
-.input-container textarea:not(:placeholder-shown) ~ label{
+.input-container textarea:not(:placeholder-shown) ~ label {
   top: -1px; /* Align with top border */
   font-size: 12px;
   color: purple;
@@ -203,7 +200,6 @@ button.btn:active {
   transform: translateY(0);
 }
 
-
 /* Add Note CSS */
 .addnotecontainer {
   max-width: 600px;
@@ -218,9 +214,6 @@ button.btn:active {
 .input-container textarea:focus {
   border-color: purple;
 }
-
-
-
 
 /* Responsive Design  */
 /* @media (max-width: 768px) {
@@ -258,14 +251,26 @@ button.btn:active {
   }
 } */
 
-
-
-
-
-
-
-
-
+.search-box {
+  font-size: 1em;
+  padding: 10px;
+  border-radius: 3px;
+  border: 0.5px solid #02111d88;
+  transition: all 0.3s ease;
+  padding-left: 30px;
+  z-index: 1;
+  margin-right: auto;
+  width: 100%;
+}
+.search-icon {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 7px;
+  z-index: 2;
+  top: 16px;
+}
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -273,7 +278,7 @@ button.btn:active {
     background-size: auto;
     background-position: top left;
   }
-  
+
   .signin-inner {
     margin-right: 5%;
   }

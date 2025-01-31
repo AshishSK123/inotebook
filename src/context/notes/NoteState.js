@@ -89,19 +89,27 @@ const NoteState = (props) => {
 
   //Delete note
   async function deleteNote(id, tag) {
-    showAlert(`Note: ${tag} Deleted`, "success")
-    //API Call
-    await fetch(`${host}/api/Notes/deletenote/${id}`, {
-      method: 'DELETE',
-      headers: {
-        "Content-Type": "application/json",
-        "auth-token": localStorage.getItem('token')
+    const del = window.confirm("Are you sure ?")
+    if(del === true)
+      {
+        //API Call
+        await fetch(`${host}/api/Notes/deletenote/${id}`, {
+          method: 'DELETE',
+          headers: {
+            "Content-Type": "application/json",
+            "auth-token": localStorage.getItem('token')
+          }
+        })
+        
+        //filter method use callback function which is applied on each element of array, and the elements for which the callback returns true are included in the new array.
+        // Delete selected note 
+        setNote(notes.filter((noteElement) => noteElement._id !== id))
+        showAlert(`Note: ${tag} Deleted`, "success")
       }
-    })
-
-    //filter method use callback function which is applied on each element of array, and the elements for which the callback returns true are included in the new array.
-    // Delete selected note 
-    setNote(notes.filter((noteElement) => noteElement._id !== id))
+      else{
+        console.log("note not deleted")
+        showAlert(`Note: Not Deleted`, "danger")
+      }
 
   }
 

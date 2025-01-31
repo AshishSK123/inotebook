@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import NotesItem from './NotesComponents/notesItem';
 import NoteContext from '../context/notes/NoteContext';
 import { useNavigate } from 'react-router-dom';
@@ -11,6 +11,7 @@ export default function Notes() {
     let navigate = useNavigate();
     //using destructure to access the values from NoteContext using useContext()
     const { notes, getNote, mode } = useContext(NoteContext)
+    const [searchQuery, setSearchQuery] = useState('');
 
     //To fetch the notes from DB
     useEffect(() => {
@@ -28,16 +29,35 @@ export default function Notes() {
     // To change test color
     const style = (mode === 'light') ? { color: 'black' } : { color: 'white' }
 
+    // Filter notes based on search query
+    const filteredNotes = notes.filter(note =>
+        note.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        note.description.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
     return (<>
-    <Editnote />
+        <Editnote />
         <div className='container' style={style}>
-            <h2 className='my-3'>Notes</h2>
+            <div className="d-flex align-items-center justify-content-between my-3">
+                <h2>Notes</h2>
+                <div className="input-group" style={{ width: "180px" }}>
+                    <span className="search-icon">
+                        <i class="fa-solid fa-magnifying-glass" style={{ color: '#040cf6' }}></i>
+                    </span>
+                    <input
+                        type="text"
+                        className="search-box"
+                        placeholder="Search notes..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                </div>
+            </div>
             {notes.length === 0 && 'Add Note to display'}
             <div className='row' >
                 {/* To display/return notes data from NotesItem */}
                 {/* {notes.map((element) => { return <NotesItem key={element._id} notes={element} updatenote={updatenote} /> })} */}
-                {notes.map((element) => { return <NotesItem key={element._id} notes={element} /> })}
+                {filteredNotes.map((element) => { return <NotesItem key={element._id} notes={element} /> })}
             </div>
         </div>
     </>
