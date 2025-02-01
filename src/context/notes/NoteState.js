@@ -6,6 +6,7 @@ import { useState } from "react";
 const NoteState = (props) => {
 
   const host = process.env.REACT_APP_BACKEND_HOST_URL
+  // const host = 'http://localhost:5000'
 
   // function to log message
   const [alert, setMsg] = useState({ msg: null, type: null });
@@ -85,31 +86,31 @@ const NoteState = (props) => {
     //.concat  returns a new array
     setNote(notes.concat(note))
     showAlert(`New Note: Added`, "success")
+
   }
 
   //Delete note
   async function deleteNote(id, tag) {
     const del = window.confirm("Are you sure ?")
-    if(del === true)
-      {
-        //API Call
-        await fetch(`${host}/api/Notes/deletenote/${id}`, {
-          method: 'DELETE',
-          headers: {
-            "Content-Type": "application/json",
-            "auth-token": localStorage.getItem('token')
-          }
-        })
-        
-        //filter method use callback function which is applied on each element of array, and the elements for which the callback returns true are included in the new array.
-        // Delete selected note 
-        setNote(notes.filter((noteElement) => noteElement._id !== id))
-        showAlert(`Note: ${tag} Deleted`, "success")
-      }
-      else{
-        console.log("note not deleted")
-        showAlert(`Note: Not Deleted`, "danger")
-      }
+    if (del === true) {
+      //API Call
+      await fetch(`${host}/api/Notes/deletenote/${id}`, {
+        method: 'DELETE',
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem('token')
+        }
+      })
+
+      //filter method use callback function which is applied on each element of array, and the elements for which the callback returns true are included in the new array.
+      // Delete selected note 
+      setNote(notes.filter((noteElement) => noteElement._id !== id))
+      showAlert(`Note: ${tag} Deleted`, "success")
+    }
+    else {
+      console.log("note not deleted")
+      showAlert(`Note: Not Deleted`, "danger")
+    }
 
   }
 
