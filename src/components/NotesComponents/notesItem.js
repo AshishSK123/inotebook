@@ -1,21 +1,14 @@
-import React, { useContext } from 'react'
-import NoteContext from '../../context/notes/NoteContext'
+import React from 'react'
 import Editnote from './Editnote'
+import Deletemodal from '../Deletemodal'
 
 export default function NotesItem(props) {
 
-  // destructing props
+  // Destructing props
   const { notes } = props
   const { title, description, tag, _id, date } = notes
   const { updatenote } = Editnote
-
-  function editNote(notes) {
-    updatenote(notes)
-  }
-
-
-  // To access the values from useContext()
-  const { deleteNote } = useContext(NoteContext)
+  const { delete_trigger } = Deletemodal
 
 
   return (
@@ -27,10 +20,8 @@ export default function NotesItem(props) {
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{description} </p>
             <p className="card-text">{date} </p>
-            {/* <i className="fa-regular fa-trash-can"></i> */}
-            <i onClick={() => { deleteNote(_id, tag) }} className="fa-solid fa-trash-can"></i>
-            {/* <i onClick={() => { test(_id , tag) }} className="fa-solid fa-trash-can"></i> */}
-            <i onClick={() => { editNote(notes) }} className="fa-regular fa-pen-to-square mx-3"></i>
+            <i onClick={() => { delete_trigger(_id , tag) }} className="fa-solid fa-trash-can"></i>
+            <i onClick={() => { updatenote(notes) }} className="fa-regular fa-pen-to-square mx-3"></i>
           </div>
         </div>
       </div>

@@ -15,6 +15,7 @@ export default function Editnote() {
     //using destructure to access the properties of note object
     const { eid, etitle, edescription, etag } = note
 
+    // To update the note
     const updatenote = (enote) => {
 
         // To assign the enote value to note object 
@@ -39,7 +40,7 @@ export default function Editnote() {
     }
 
     // To add new note
-    function handleClick(e) {
+    function handleClick() {
 
         //addNote function calling with parameters
         editNote(eid, etitle, edescription, etag)
@@ -79,7 +80,6 @@ export default function Editnote() {
                     </div>
                     <div className="modal-footer">
                         <button type="submit" className="logoutbtn" onClick={handleClick} data-bs-dismiss="modal">Update</button>
-                        {/* <button type="button" className="btn btn-primary" data-bs-dismiss="modal">Understood</button> */}
                     </div>
                 </div>
             </div>

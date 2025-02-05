@@ -1,12 +1,10 @@
 import React, { useState, useContext } from 'react'
 import NoteContext from '../../context/notes/NoteContext';
 
-
-
 export default function Addnote() {
 
     //using destructure to access the values from NoteContext using useContext()
-    const { addNote, mode } = useContext(NoteContext)
+    const { addNote } = useContext(NoteContext)
 
     // note object initialization to access the user input and set it to notes
     const [note, setNote] = useState({ title: "", description: "", tag: "" })
@@ -36,15 +34,12 @@ export default function Addnote() {
         setNote({ ...note, [e.target.name]: e.target.value })
     }
 
-    // To change test color
-    // const style = (mode === 'light') ? { color: 'black' } : { color: 'white' }
-
     return (
         <form className='addnotecontainer' onSubmit={handleClick}>
             <h3 className='my-2' >Create new Note</h3>
             <p>Add a new note with your info/notes</p>
             <div className="input-container mb-3">
-                <input type="text" placeholder=""className="form-control" id="tag" name='tag' value={tag} onChange={onChange} required minLength={3} />
+                <input type="text" placeholder="" className="form-control" id="tag" name='tag' value={tag} onChange={onChange} required minLength={3} />
                 <label htmlFor="tag" className="form-label">Tag</label>
             </div>
             <div className="input-container mb-3 my-3">

@@ -2,11 +2,12 @@
 import NoteContext from "./NoteContext";
 import { useState } from "react";
 
+
 // function to create state variables and pass using createContext variable
 const NoteState = (props) => {
 
-  const host = process.env.REACT_APP_BACKEND_HOST_URL
-  // const host = 'http://localhost:5000'
+  // const host = process.env.REACT_APP_BACKEND_HOST_URL
+  const host = 'http://localhost:5000'
 
   // function to log message
   const [alert, setMsg] = useState({ msg: null, type: null });
@@ -89,10 +90,9 @@ const NoteState = (props) => {
 
   }
 
+
   //Delete note
   async function deleteNote(id, tag) {
-    const del = window.confirm("Are you sure ?")
-    if (del === true) {
       //API Call
       await fetch(`${host}/api/Notes/deletenote/${id}`, {
         method: 'DELETE',
@@ -105,15 +105,10 @@ const NoteState = (props) => {
       //filter method use callback function which is applied on each element of array, and the elements for which the callback returns true are included in the new array.
       // Delete selected note 
       setNote(notes.filter((noteElement) => noteElement._id !== id))
-      showAlert(`Note: ${tag} Deleted`, "success")
-    }
-    else {
-      console.log("note not deleted")
-      showAlert(`Note: Not Deleted`, "danger")
-    }
+      showAlert(`Note: "${tag}" Deleted`, "success")
+
 
   }
-
 
   //Edit a note
   async function editNote(id, title, description, tag) {

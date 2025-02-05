@@ -3,6 +3,7 @@ import NotesItem from './NotesComponents/notesItem';
 import NoteContext from '../context/notes/NoteContext';
 import { useNavigate } from 'react-router-dom';
 import Editnote from './NotesComponents/Editnote';
+import Deletemodal from './Deletemodal';
 
 
 export default function Notes() {
@@ -37,12 +38,13 @@ export default function Notes() {
 
     return (<>
         <Editnote />
+        <Deletemodal />
         <div className='container' style={style}>
             <div className="d-flex align-items-center justify-content-between my-3">
                 <h2>Notes</h2>
                 <div className="input-group" style={{ width: "180px" }}>
                     <span className="search-icon">
-                        <i class="fa-solid fa-magnifying-glass" style={{ color: '#040cf6' }}></i>
+                        <i className="fa-solid fa-magnifying-glass" style={{ color: '#040cf6' }}></i>
                     </span>
                     <input
                         type="text"
