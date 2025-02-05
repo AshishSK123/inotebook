@@ -6,8 +6,8 @@ import { useState } from "react";
 // function to create state variables and pass using createContext variable
 const NoteState = (props) => {
 
-  // const host = process.env.REACT_APP_BACKEND_HOST_URL
-  const host = 'http://localhost:5000'
+  const host = process.env.REACT_APP_BACKEND_HOST_URL
+  //const host = 'http://localhost:5000'
 
   // function to log message
   const [alert, setMsg] = useState({ msg: null, type: null });
